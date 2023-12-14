@@ -1,0 +1,12 @@
+//  Set the value at A1 to the current date
+function main(workbook: ExcelScript.Workbook) {
+    // Get the range for cell A1.
+  let range = workbook.getActiveWorksheet().getRange("A1");
+    // Get the current date and time.
+  let date = new Date(Date.now());
+  // Set the value at A1 to the current date, using a localized string.
+  range.setValue(date.toLocaleDateString());
+    }
+/*
+12/14/2023
+*/
