@@ -1,0 +1,20 @@
+// create range from A1 to A9 and put 1 to 9 in it
+function main(workbook: ExcelScript.Workbook) {
+    let selectedSheet = workbook.getActiveWorksheet();
+    for (let i = 1; i < 10; i++) {
+        selectedSheet.getRange("A" + i).setValue(i); //works
+        console.log("A" + i);
+    }
+}
+/*
+sheet	log
+1	    A1
+2	    A2
+3	    A3
+4	    A4
+5	    A5
+6	    A6
+7	    A7
+8	    A8
+9	    A9
+*/
