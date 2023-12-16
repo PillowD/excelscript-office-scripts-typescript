@@ -1,0 +1,8 @@
+//	pick row 16 and put row number in the cell
+function main(workbook: ExcelScript.Workbook) {
+	workbook.getActiveWorksheet().getRange("A16").setFormulaLocal("=ROW()");
+}
+/*
+cell
+16 in A16
+*/
