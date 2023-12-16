@@ -1,0 +1,16 @@
+// get the type of a variable and put it in the next cell
+function main(workbook: ExcelScript.Workbook) {
+workbook.getActiveWorksheet().getRange("A1").setValue("appleorchard") // note strings have ""
+let A1variabletype = workbook.getActiveWorksheet().getRange("A1").getValueType();
+workbook.getActiveWorksheet().getRange("A2").setValue(A1variabletype) // A2 = string
+  workbook.getActiveWorksheet().getRange("A3").setValue(5) // not number don't have ""
+  let A3variabletype = workbook.getActiveWorksheet().getRange("A3").getValueType();
+  workbook.getActiveWorksheet().getRange("A4").setValue(A3variabletype) // A4 = Double
+}
+/*
+Cell
+appleorchard
+String
+5
+Double
+*/
