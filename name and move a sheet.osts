@@ -1,0 +1,16 @@
+// name and move a sheet
+// function main is the entry point
+// workbook: object argument 
+// ExcelScript.Workbook typ of arguent
+function main(workbook: ExcelScript.Workbook) {
+  const sheet = workbook.getWorksheet('Sheet1'); 
+    if (sheet) {
+    // set name to SALES
+    sheet.setName('Sales');
+    //position the worksheet at the beginning
+    sheet.setPosition(0);
+  }
+}
+/*
+If there is a Sheet1, name is changed and moved to the left most spot
+*/
