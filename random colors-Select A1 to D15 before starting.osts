@@ -1,0 +1,30 @@
+// random colors-Select A1 to D15 before starting
+//  select A1:D15 before running script
+function main(workbook: ExcelScript.Workbook) {
+    // Get the currently selected range.
+    let range = workbook.getSelectedRange();
+    // selected range is just the dragged area
+
+    // Get the size boundaries of the range.
+    let rows = range.getRowCount();
+    let cols = range.getColumnCount();
+
+    // Clear any existing formatting.
+    range.clear(ExcelScript.ClearApplyTo.formats);
+console.log(rows,cols);
+    // Iterate over the range.
+    for (let row = 0; row < rows; row++) {
+        for (let col = 0; col < cols; col++) {
+            // Generate a random hexadecimal color code.
+            let colorString = `#${Math.random().toString(16).substr(-6)}`;
+
+            // Set the color of the current cell to that random hexadecimal code.
+            range.getCell(row, col).getFormat().getFill().setColor(colorString);
+        }
+    }
+}
+/*
+Output (2)
+15
+4
+*/
