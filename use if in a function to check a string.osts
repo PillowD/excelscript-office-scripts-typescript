@@ -1,0 +1,24 @@
+// use if in a function to check a string.osts
+function main(workbook: ExcelScript.Workbook) {
+    // Get the active cell and worksheet.
+    let selectedCell = workbook.getActiveCell();
+    let selectedSheet = workbook.getActiveWorksheet();
+
+    function checkString(input: string): void {
+        if (input === "Freddy") {
+            console.log("Input matches 'Freddy'");
+        }
+        else {
+            console.log("Input doesn't match 'Freddy'");
+        }
+    }
+checkString("freddy");
+checkString("Fred");
+checkString("Freddy");
+}
+/*
+Output (3)
+Input doesn't match 'Freddy'
+Input doesn't match 'Freddy'
+Input matches 'Freddy'
+*/
