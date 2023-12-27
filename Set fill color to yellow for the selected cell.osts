@@ -1,0 +1,8 @@
+// Set fill color to yellow for the selected cell.
+function main(workbook: ExcelScript.Workbook) {
+  // Get the active worksheet and cell.
+  let selectedSheet = workbook.getActiveWorksheet();
+  let selectedCell = workbook.getActiveCell();
+  // Set fill color to yellow for the selected cell.
+  selectedCell.getFormat().getFill().setColor("yellow");
+}
