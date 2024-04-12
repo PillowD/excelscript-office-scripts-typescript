@@ -1,0 +1,25 @@
+function main(workbook: ExcelScript.Workbook) {
+	let selectedSheet = workbook.getActiveWorksheet();
+	// Set fill color to FF0000 for range A1 on selectedSheet
+	selectedSheet.getRange("A1").getFormat().getFill().setColor("FF0000");
+	// Auto fill range
+	selectedSheet.getRange("A1").autoFill("A1:J1", ExcelScript.AutoFillType.fillDefault);
+	// Paste to range A3 on selectedSheet from range A1:J1 on selectedSheet
+	selectedSheet.getRange("A3").copyFrom(selectedSheet.getRange("A1:J1"), ExcelScript.RangeCopyType.all, false, false);
+	// Paste to range A5 on selectedSheet from range A1:J1 on selectedSheet
+	selectedSheet.getRange("A5").copyFrom(selectedSheet.getRange("A1:J1"), ExcelScript.RangeCopyType.all, false, false);
+	// Paste to range A7 on selectedSheet from range A1:J1 on selectedSheet
+	selectedSheet.getRange("A7").copyFrom(selectedSheet.getRange("A1:J1"), ExcelScript.RangeCopyType.all, false, false);
+	// Paste to range A9 on selectedSheet from range A1:J1 on selectedSheet
+	selectedSheet.getRange("A9").copyFrom(selectedSheet.getRange("A1:J1"), ExcelScript.RangeCopyType.all, false, false);
+	// Paste to range A11 on selectedSheet from range A1:J1 on selectedSheet
+	selectedSheet.getRange("A11").copyFrom(selectedSheet.getRange("A1:J1"), ExcelScript.RangeCopyType.all, false, false);
+	// Paste to range A13 on selectedSheet from range A1:J1 on selectedSheet
+	selectedSheet.getRange("A13").copyFrom(selectedSheet.getRange("A1:J1"), ExcelScript.RangeCopyType.all, false, false);
+	// Set fill color to 4472C4 for range A1 on selectedSheet
+	selectedSheet.getRange("A1").getFormat().getFill().setColor("4472C4");
+	// Auto fill range
+	selectedSheet.getRange("A1").autoFill("A1:D1", ExcelScript.AutoFillType.fillDefault);
+	// Auto fill range
+	selectedSheet.getRange("A1:D1").autoFill("A1:D7", ExcelScript.AutoFillType.fillDefault);
+}
