@@ -1,0 +1,33 @@
+// Example Office Script (Excel)
+function main(workbook: ExcelScript.Workbook) {
+  // Get the active worksheet.
+  let selectedSheet = workbook.getActiveWorksheet();
+
+  // Autofit columns and rows
+  selectedSheet.getRange('A1:Z99').getFormat().autofitColumns();
+  selectedSheet.getRange('A1:Z99').getFormat().autofitRows();
+
+  // Clear all conditional formats
+  selectedSheet.getRange('A1:Z99').clearAllConditionalFormats();
+
+  // Clear fill color
+  selectedSheet.getRange('A1:Z99').getFormat().getFill().clear();
+
+  // Set font properties to plain Calibri 11
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setColor('black');
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setBold(false);
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setItalic(false);
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setName('Calibri');
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setStrikethrough(false);
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setSubscript(false);
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setSuperscript(false);
+  selectedSheet.getRange('A1:Z99').getFormat().getFont().setSize(11);
+
+  // Set horizontal and vertical alignment to center
+  selectedSheet.getRange('A1:Z99').getFormat().setHorizontalAlignment(ExcelScript.HorizontalAlignment.center);
+  selectedSheet.getRange('A1:Z99').getFormat().setVerticalAlignment(ExcelScript.VerticalAlignment.center);
+
+  console.log("Format Removal Complete"); // Log a message indicating completion
+}
+
+
